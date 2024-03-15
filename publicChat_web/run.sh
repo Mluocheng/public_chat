@@ -1,2 +1,2 @@
 docker build -t publicchatweb .
-docker run -d -p 34006:34006 --name publicchatweb publicchatweb
+docker run -d -p 34002:34002 --name publicchatweb publicchatweb
