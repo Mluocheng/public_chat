@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Stage 2: 运行环境
-FROM node:alpine
+FROM node:18.17.0
 
 # 创建工作目录
 WORKDIR /app
