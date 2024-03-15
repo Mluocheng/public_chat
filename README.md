@@ -15,7 +15,6 @@
 # 打包
     set ENV_VAR=build
     set GOOS=linux
-    go build -o chatOS .
+    go build -o publicchat .
 
-# 服务器
-    chmod +x chatOS
+![alt text](image.png)
