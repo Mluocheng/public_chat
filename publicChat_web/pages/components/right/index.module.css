@@ -1,0 +1,40 @@
+.right{
+    flex: 1 1 auto;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.content{
+    flex: 1 1 auto;
+    background-color: #161b22;
+    /* max-height: 50%; */
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* 整个滚动条的样式 */
+.content::-webkit-scrollbar {
+    width: 6px; /* 滚动条的宽度 */
+}
+
+/* 滚动条轨道的样式 */
+.content::-webkit-scrollbar-track {
+    background: #525252; /* 轨道的背景颜色 */
+}
+
+/* 滚动条滑块的样式 */
+.content::-webkit-scrollbar-thumb {
+    background: #888; /* 滑块的背景颜色 */
+}
+
+/* 当滑块被鼠标悬停或点击时的样式 */
+.content::-webkit-scrollbar-thumb:hover {
+    background: #555; /* 悬停时滑块的背景颜色 */
+}

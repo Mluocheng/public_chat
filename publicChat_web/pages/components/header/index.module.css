@@ -1,0 +1,58 @@
+.haeder {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.inputusername {
+  margin-right: 20px;
+  width: 300px;
+  height: 30px;
+  background-color: #0d1117;
+  border: 1px solid #6c6c6c;
+  border-radius: 4px;
+}
+.inputusername:focus {
+  border-color: white;
+}
+.inputusername:hover {
+  border-color: white;
+}
+
+.ava {
+  margin-right: 20px;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+}
+
+.ava:hover {
+  background-color: #30363d;
+  color: white;
+  border: 1px solid #30363d;
+}
+
+.inputFile {
+  display: none;
+}
+
+.avaImgBox{
+    width: 53px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+}
+.avaImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+   
+}
+
+.leftBtn {
+  margin-right: 20px;
+}

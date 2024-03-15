@@ -1,0 +1,21 @@
+/* Layout.module.css */
+
+.layout{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #0d1117;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #e6edf3;
+}
+
+.body{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.space{
+    width: 20px;
+}

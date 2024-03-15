@@ -1,0 +1,83 @@
+.messageItem{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.messageItemRight{
+    justify-content: flex-end;
+}
+
+.messageItemLeft{
+  
+}
+
+.ava{
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #cdcdcd;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.content{
+    padding: 0px 20px;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: wrap;
+}
+
+.contentTitle{
+    font-weight: normal;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.contentDetail{
+    /* max-width: 90%; */
+    padding:0 20px;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: 18px;
+    white-space: normal;
+    word-wrap: break-word; /* 长单词断行 */
+    white-space: normal; /* 正常换行，合并空白符 */
+}
+.privateMessageRight .sendUser,
+.privateMessageLeft .sendUser{
+    color: #e34c26;
+    font-weight: bold;
+}
+.privateMessageRight .receUser,
+.privateMessageLeft .receUser{
+    color: #00ADD8;
+    font-weight: bold;
+}
+
+.publicMessageRight .contentTitle,
+.privateMessageRight .contentTitle{
+    text-align: right;
+}
+
+.publicMessageRight .sendUser{
+    color: #e34c26;
+    font-weight: bold;
+}
+
+.publicMessageLeft .sendUser{
+    color: #00ADD8;
+    font-weight: bold;
+}
+
+.privateMessageRight .contentDetail,
+.publicMessageRight .contentDetail{
+    text-align: end;
+}
