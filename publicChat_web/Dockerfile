@@ -1,5 +1,5 @@
 # Stage 1: 构建环境
-FROM node:alpine as builder
+FROM node:18.17.0 as builder
 
 # 创建工作目录
 WORKDIR /app
