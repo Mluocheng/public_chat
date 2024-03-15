@@ -30,7 +30,7 @@ type Msg struct {
 
 var users = make(map[string]User) // 用户列表，用户名作为key
 var msgs = list.New()             // 消息列表（用于存储私信消息）
-var port = "34005"                // 端口号
+var port = "34001"                // 端口号
 
 // 定义WebSocket连接的升级器。升级器是一个http.HandlerFunc，它将HTTP连接升级为WebSocket连接
 var upgrader = websocket.Upgrader{
