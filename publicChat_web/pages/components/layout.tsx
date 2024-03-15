@@ -82,7 +82,7 @@ export default function Layout() {
         m.set(
             'Pic',
             !!avatar
-                ? 'img/' + sendUser + '/' + avatar
+                ? avatar
                 : sendUser?.slice(0, 2)
         )
         var json = mapToJson(m) // map转json
