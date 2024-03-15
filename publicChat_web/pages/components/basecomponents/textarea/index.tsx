@@ -1,8 +1,8 @@
 import { SetStateAction, useContext, useRef, useState } from 'react';
 import styles from './index.module.css';
 import { Input, message } from 'antd';
-import { isKeyword } from '@/pages/utils/iskeyword';
-import { AppContext } from '@/pages/contex';
+import { isKeyword } from '@/utils/iskeyword';
+import { AppContext } from '@/contex';
 
 type Props = {
   onPressEnter: (e: any) => void,

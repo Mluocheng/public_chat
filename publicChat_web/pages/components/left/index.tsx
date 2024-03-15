@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import Textarea from '../basecomponents/textarea';
 import Title from '../basecomponents/title';
 import styles from './index.module.css';
-import { AppContext } from '@/pages/contex';
+import { AppContext } from '@/contex';
 import Message from '../basecomponents/message';
 
 type Props = {

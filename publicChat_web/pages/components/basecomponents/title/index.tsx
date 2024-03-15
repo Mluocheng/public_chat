@@ -1,6 +1,6 @@
 import { useCallback, useContext } from 'react';
 import styles from './index.module.css';
-import { AppContext } from '@/pages/contex';
+import { AppContext } from '@/contex';
 import { Dropdown, DropdownProps, MenuProps, Space } from 'antd';
 import iconDownMenu from '@/assets/downMenu.png';
 import Image from 'next/image';

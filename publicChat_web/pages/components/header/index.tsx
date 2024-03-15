@@ -1,9 +1,9 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import { message } from 'antd';
-import { AppContext } from '@/pages/contex';
+import { AppContext } from '@/contex';
 import Button from '../basecomponents/button';
 import styles from './index.module.css';
-import { isKeyword } from '@/pages/utils/iskeyword';
+import { isKeyword } from '@/utils/iskeyword';
 
 type Props = {
   onLogin: (params: { user: string, pic: string }) => void;

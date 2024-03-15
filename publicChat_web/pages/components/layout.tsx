@@ -5,12 +5,12 @@ import Header from "./header";
 import Left from "./left";
 import Right from "./right";
 import { useContext, useEffect, useRef, useState } from 'react';
-import { getCurrentTime } from '../utils/getCurrentTime';
-import { AppContext } from '../contex';
+import { getCurrentTime } from '../../utils/getCurrentTime';
+import { AppContext } from '../../contex';
 import { message } from 'antd';
-import { mapToJson } from '../utils/mapToJson';
+import { mapToJson } from '../../utils/mapToJson';
 import { useWebSocket } from "ahooks";
-import { isKeyword } from '../utils/iskeyword';
+import { isKeyword } from '../../utils/iskeyword';
 
 export default function Layout() {
     const { receUser, user, avatar, receUsers, setAvatar, setUser, setReceUser, setReceUsers } = useContext(AppContext)

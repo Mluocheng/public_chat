@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import styles from './index.module.css';
-import { AppContext } from '@/pages/contex';
+import { AppContext } from '@/contex';
 
 type Props = {
   messages: Message[];
@@ -80,7 +80,7 @@ export default function Message({ messages, isPublic = false }: Props) {
     return content
   }
 
-  if (!messages.length) return <></>
+  if (!messages?.length) return <></>
   return messages?.map((item, index) => {
     const isRight = ((item.SendUser == "我") || (item.SendUser === user));
 
