@@ -1,4 +1,4 @@
 **/node_modules/
 **/test/
-/publicChat_backend/ssl/** */
+./publicChat_backend/ssl/
 test
