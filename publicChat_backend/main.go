@@ -61,6 +61,11 @@ func main() {
 		go handleConnection(conn, r)
 	})
 
+	// 定义一个_next/webpack-hmr接口始终返回true
+	http.HandleFunc("/_next/webpack-hmr", func(w http.ResponseWriter, r *http.Request) {
+
+	})
+
 	// log.Fatal(http.ListenAndServe(":"+port, nil))
 
 	certFile := "./ssl/luocheng.fun.pem"
@@ -68,10 +73,10 @@ func main() {
 
 	// 本地开发使用自签名证书
 
-	if envVar == "dev" {
-		certFile = "./ssl/localhost.crt"
-		keyFile = "./ssl/localhost.key"
-	}
+	// if envVar == "dev" {
+	certFile = "./ssl/localhost.crt"
+	keyFile = "./ssl/localhost.key"
+	// }
 	fmt.Println("starting server:", ":"+port)
 	ListenAndServeTLSErr := http.ListenAndServeTLS(":"+port, certFile, keyFile, nil)
 	if ListenAndServeTLSErr != nil {
