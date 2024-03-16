@@ -48,7 +48,7 @@ export default function Layout() {
         const pic = _pic ? _pic : _user?.slice(0, 2)
         const jsonData = { Name: _user, Pic: pic, IsImg: !!_pic } // 准备要发送的JSON数据
         const jsonStr = JSON.stringify(jsonData) // 将JSON数据转换为字符串
-        const fullUrl = `ws://localhost:34001/web-socket?data=${encodeURIComponent(jsonStr)}`;
+        const fullUrl = `wss://localhost:34001/web-socket?data=${encodeURIComponent(jsonStr)}`;
         setUrl(fullUrl);
         setTimeout(() => { connect() }, 0)
         message.info({ content: '登录成功！' })

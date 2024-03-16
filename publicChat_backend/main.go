@@ -3,8 +3,10 @@ package main
 import (
 	"container/list"
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/websocket"
 )
@@ -31,6 +33,7 @@ type Msg struct {
 var users = make(map[string]User) // 用户列表，用户名作为key
 var msgs = list.New()             // 消息列表（用于存储私信消息）
 var port = "34001"                // 端口号
+var envVar = os.Getenv("ENV_VAR")
 
 // 定义WebSocket连接的升级器。升级器是一个http.HandlerFunc，它将HTTP连接升级为WebSocket连接
 var upgrader = websocket.Upgrader{
@@ -50,7 +53,23 @@ func main() {
 		}
 		go handleConnection(conn, r)
 	})
-	log.Fatal(http.ListenAndServe(":"+port, nil))
+
+	// log.Fatal(http.ListenAndServe(":"+port, nil))
+
+	certFile := "./ssl/luocheng.fun.pem"
+	keyFile := "./ssl/luocheng.fun.key"
+
+	// 本地开发使用自签名证书
+
+	if envVar == "dev" {
+		certFile = "./ssl/localhost.crt"
+		keyFile = "./ssl/localhost.key"
+	}
+
+	ListenAndServeTLSErr := http.ListenAndServeTLS(":"+port, certFile, keyFile, nil)
+	if ListenAndServeTLSErr != nil {
+		fmt.Println("Error starting server:", ListenAndServeTLSErr)
+	}
 }
 
 func handleConnection(conn *websocket.Conn, r *http.Request) {
