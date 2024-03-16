@@ -44,7 +44,14 @@ var upgrader = websocket.Upgrader{
 	},
 }
 
+func test(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Hello, World!"))
+}
+
 func main() {
+	fmt.Println("当前环境：", envVar)
+
+	http.HandleFunc("/test", test)
 	http.HandleFunc("/web-socket", func(w http.ResponseWriter, r *http.Request) {
 		conn, err := upgrader.Upgrade(w, r, nil)
 		if err != nil {
@@ -65,11 +72,12 @@ func main() {
 		certFile = "./ssl/localhost.crt"
 		keyFile = "./ssl/localhost.key"
 	}
-
+	fmt.Println("starting server:", ":"+port)
 	ListenAndServeTLSErr := http.ListenAndServeTLS(":"+port, certFile, keyFile, nil)
 	if ListenAndServeTLSErr != nil {
 		fmt.Println("Error starting server:", ListenAndServeTLSErr)
 	}
+
 }
 
 func handleConnection(conn *websocket.Conn, r *http.Request) {
