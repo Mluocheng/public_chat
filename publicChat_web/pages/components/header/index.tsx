@@ -41,7 +41,6 @@ export default function Header({ onLogin, onLogout }: Props) {
   function handleFileChange(e: any) {
     let fileSuffix = '';
     if (avatar) {
-      // message.error({ content: '头像已存在' })
       return;
     }
     if (e.target.files.length > 0) {
