@@ -23,6 +23,7 @@ export default function Header({ onLogin, onLogout }: Props) {
       setUser("")
       return;
     }
+    if(!name) return;
     if (user) return;
     setUser(name)
     onLogin({ user: name, pic: _ava })
@@ -30,6 +31,7 @@ export default function Header({ onLogin, onLogout }: Props) {
 
   // 退出
   function handleLogout() {
+    if(!user) return; 
     message.info({ content: '退出登录！' })
     setName("")
     onLogout();
